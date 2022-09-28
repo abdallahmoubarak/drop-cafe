@@ -34,6 +34,10 @@ export default function IndexPage() {
           overscroll-behavior: contain;
           -ms-overflow-style: none;
           scrollbar-width: none;
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
         }
         *::-webkit-scrollbar {
           display: none;
