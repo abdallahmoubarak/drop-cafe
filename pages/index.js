@@ -1,15 +1,24 @@
-import Head from "next/head";
 import { useState } from "react";
+import Head from "next/head";
+import Main from "../components/Main";
+import Menu from "../components/Menu";
 
 export default function IndexPage() {
   const [lang, setLang] = useState("");
   const [main, setMain] = useState(true);
   return (
     <>
-      <div>
-        <Head>
-          <title>Drop Cafe</title>
-        </Head>
+      <Head>
+        <title>Drop Cafe</title>
+      </Head>
+      <div className="app">
+        <>
+          {main ? (
+            <Main setMain={setMain} setLang={setLang} />
+          ) : (
+            <Menu lang={lang} setMain={setMain} />
+          )}
+        </>
       </div>
       <style jsx global>{`
         * {
